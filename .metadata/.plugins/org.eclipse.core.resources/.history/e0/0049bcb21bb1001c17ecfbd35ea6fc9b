@@ -1,0 +1,28 @@
+package hw2;
+
+public class Point {
+	
+	double x;
+	double y;
+	
+	Point() {
+		this(0.0, 0.0);
+	}
+	
+	Point(double a, double b){
+	    this.x = a;
+	    this.y = b;
+	}
+	
+	Point midpoint(Point a1, Point b1) {
+		Point c;
+		c.x = (a1.x + b1.y)/2.0;
+		c.y = (a1.x + b1.y) / 2.0;
+		return c;
+	}
+	
+	boolean equal(Point k) {
+		if(this.x==k.x && this.y==k.y)
+	}
+}
+	

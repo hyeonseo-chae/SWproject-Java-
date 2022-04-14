@@ -1,0 +1,54 @@
+import java.io.File;
+import java.util.Scanner;
+import java.util.Queue;
+import java.util.LinkedList;
+
+
+class BookmarkList {
+	
+	Bookmark[] BookmarkList = new Bookmark[100];
+	Bookmark[] Temp = new Bookmark[100];
+	static String[] splitline;
+	int cnt = -1;
+
+	BookmarkList(String bookmarkFileName){
+		File file = new File(bookmarkFileName);
+		try {
+			Scanner input = new Scanner(file);
+			while(input.hasNextLine()) {
+				String line = input.nextLine();
+				String nospacingline = line.replaceAll("\\s+",""); //공백제거
+				splitline = nospacingline.split("\\;|,",-1);
+				if(nospacingline.charAt(0)!='/'&&nospacingline.charAt(1)!='/') { // 처음에 //가 오면 출력 안함
+					cnt = cnt+1;
+					BookmarkList[cnt] = new Bookmark(splitline[0],splitline[1],splitline[2],splitline[3],splitline[4]);
+					
+				} 
+				}
+			input.close();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			
+		}
+	}
+	
+public int numBookmarks() {
+		
+		return cnt;
+	}
+	
+
+public void mergeByGroup() {
+
+}
+
+	public Bookmark getBookmark(int i) {
+		return BookmarkList[i];
+		
+		
+		
+	}
+		
+	
+}

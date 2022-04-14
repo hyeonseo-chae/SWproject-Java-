@@ -1,0 +1,89 @@
+
+
+class Bookmark{
+	
+	String name;
+	String time;
+	String url;
+	String groupname;
+	String memo;
+	int cnt = 0;
+	Bookmark(){
+		
+	}
+	Bookmark(String name, String time, String url, String groupname, String memo){
+		this.name = name;
+		this.time = time;
+		this.url = url;
+		this.groupname = groupname;
+		this.memo = memo;	
+	}
+	
+	String getName() {
+		return name;
+	}
+	
+	void getName(String name) {
+		this.name = name;
+	}
+	
+	void getTIme(String time) {
+		try {
+			if(time.charAt(2)=='-') {
+				throw new Exception();
+			}
+		}catch (Exception ex){
+			System.out.print("Date Format Error -> No Created Time invalid Bookmark info line:");
+
+		}
+		this.time = time;
+	}
+	
+	String getTime() {
+		
+		
+		return time;
+	}
+	
+	String getUrl() {
+		try {
+			if(url.equals("")) {
+				throw new Exception();
+			}
+		}catch (Exception ex){
+			System.out.print("MalformedURLException: wrong URL - No URL ; invalid Bookmark info line:");
+
+		}
+		return url;
+	}
+	
+	void getUrl(String url) {
+		this.url = url;
+	}
+	String getGroupname() {
+		return groupname;
+	}
+	void getGroupname(String groupname) {
+		this.groupname = groupname;
+	}
+	String getMemo() {
+		return memo;
+	}
+	void getMemo(String memo) {
+		this.memo = memo;
+	}
+	
+
+	
+
+
+	public void print(){
+		System.out.println(getName()+","+getTime()+","+getUrl()+","+getGroupname()+","+getMemo());
+		
+	}
+	
+}
+
+
+
+

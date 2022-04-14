@@ -1,0 +1,65 @@
+import java.io.File;
+import java.util.Scanner;
+
+
+class BookmarkList {
+	
+	Bookmark[] BookmarkList = new Bookmark[100];
+	Bookmark[] Temp = new Bookmark[100];
+	static String[] splitline;
+	int cnt = -1;
+
+	BookmarkList(String bookmarkFileName){
+		File file = new File(bookmarkFileName);
+		try {
+			Scanner input = new Scanner(file);
+			while(input.hasNextLine()) {
+				String line = input.nextLine();
+				String nospacingline = line.replaceAll("\\s+",""); //공백제거
+				splitline = nospacingline.split("\\;|,",-1);
+				if(nospacingline.charAt(0)!='/'&&nospacingline.charAt(1)!='/') { // 처음에 //가 오면 출력 안함
+					cnt = cnt+1;
+					BookmarkList[cnt] = new Bookmark(splitline[0],splitline[1],splitline[2],splitline[3],splitline[4]);
+					
+				} 
+				}
+			input.close();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			
+		}
+	}
+	
+public int numBookmarks() {
+		return cnt+1; // 개수를 return하는 거라서 배열의 마지막 index+1
+	}
+	
+
+public void mergeByGroup() {
+	
+// 여기서 정렬하는거 생각하기
+	for(int i = 0; i<cnt; i++) {
+		for(int k = i+1;k<cnt+1;k++) {
+			 {
+				Temp[0] = BookmarkList[k];
+				for (int j = k; j>i+1;j--) {
+					BookmarkList[j] = BookmarkList[j-1];
+				}
+				BookmarkList[i+1] = Temp[0];
+				
+			}
+		}
+	}
+	System.out.print(BookmarkList[1].getGroupname());
+}
+
+	public Bookmark getBookmark(int i) {
+		return BookmarkList[i];
+		
+		
+		
+	}
+		
+	
+}
