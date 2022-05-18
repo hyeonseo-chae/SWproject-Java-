@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
-		<item key="ShowStatusLine" value="false"/>
-		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=hw2/src&amp;lt;hw2{Point.java[TestPoint&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=hw2/src&amp;lt;hw2{TestPoint.java[TestPoint&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Bookmark/src&amp;lt;{Bookmark.java[Bookmark&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Bookmark/src&amp;lt;{test.java[test&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=hw2/src&amp;lt;hw2{Point.java[TestPoint&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=hw2/src&amp;lt;hw2{TestPoint.java[TestPoint&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Bookmark/src&amp;lt;{Bookmark.java[Bookmark&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Bookmark/src&amp;lt;{test.java[test&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=circle/src&amp;lt;{TestCircle.java[TestCircle&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=myArrayList/src&amp;lt;{testjava.java[testjava&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
 		<section name="DialogBoundsSettings">
 			<item key="DIALOG_HEIGHT" value="495"/>
 			<item key="DIALOG_WIDTH" value="406"/>
@@ -10,5 +10,9 @@
 			<item key="DIALOG_Y_ORIGIN" value="134"/>
 			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 		</section>
+	</section>
+	<section name="expressionHistory">
+	</section>
+	<section name="conditionHistory">
 	</section>
 </section>
