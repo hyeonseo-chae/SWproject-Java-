@@ -1,7 +1,6 @@
 import java.io.File;
 import java.util.Scanner;
 
-
 class BookmarkList {
 	
 	Bookmark[] BookmarkList = new Bookmark[100];
@@ -10,14 +9,14 @@ class BookmarkList {
 	int cnt = -1;
 
 	BookmarkList(String bookmarkFileName){
-		File file = new File(bookmarkFileName);
+		File file = new File(bookmarkFileName); 
 		try {
 			Scanner input = new Scanner(file);
 			while(input.hasNextLine()) {
 				String line = input.nextLine();
-				String nospacingline = line.replaceAll("\\s+",""); //공백제거
+				String nospacingline = line.replaceAll("\\s+",""); 
 				splitline = nospacingline.split("\\;|,",-1);
-				if(nospacingline.charAt(0)!='/'&&nospacingline.charAt(1)!='/') { // 처음에 //가 오면 출력 안함
+				if(nospacingline.charAt(0)!='/'&&nospacingline.charAt(1)!='/') { 
 					if(splitline[1].charAt(2)=='-') {
 						System.out.print("Date Format Error -> No Created Time invalid Bookmark info line:");
 						BookmarkList[cnt] = new Bookmark(splitline[0],splitline[1],splitline[2],splitline[3],splitline[4]);
@@ -42,13 +41,13 @@ class BookmarkList {
 	}
 	
 public int numBookmarks() {
-		return cnt+1; // 개수를 return하는 거라서 배열의 마지막 index+1
+		return cnt+1; 
 	}
 	
 
 public void mergeByGroup() {
 	
-// 여기서 정렬하는거 생각하기
+
 	for(int i = 0; i<cnt; i++) {
 		for(int k = i+1;k<cnt+1;k++) {
 			if(!(BookmarkList[i].groupname).equals("")&&(BookmarkList[i].groupname).equals(BookmarkList[k].groupname)) {
