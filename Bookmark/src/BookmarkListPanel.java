@@ -84,7 +84,7 @@ public class BookmarkListPanel extends JFrame {
 		
 		button1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				new AddWindow();
+				new AddWindow(o);
 			}
 		});
 		
@@ -151,6 +151,7 @@ public class BookmarkListPanel extends JFrame {
 
 	
 		}
+	
 
 
 	

@@ -13,6 +13,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\eric7\Desktop\수업\소프트웨어프로젝트\SWproject-Java-\Bookmark"/>
 			<item value="D:\수업\소프트웨어프로젝트\java\Bookmark"/>
 		</list>
 	</section>

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class AddWindow extends JFrame{
 	BookmarkListPanel k = new BookmarkListPanel();
-	public AddWindow() {
+	public AddWindow(BookmarkList list) {
 		
 		JButton button1;
 		Dimension dim = new Dimension(1000,100);
@@ -53,8 +53,8 @@ public class AddWindow extends JFrame{
 				LocalDateTime now = LocalDateTime.now();
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm");
 				String formatedNow = now.format(formatter);
-				o.BookmarkList.add(new Bookmark(group,name,url,formatedNow,memo));
-				
+				list.add(group,name,url,formatedNow,memo);
+				System.out.println(list.numBookmarks());
 				k.BookmarkListPanelre();
 				frame.dispose();
 			}
