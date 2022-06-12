@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 class BookmarkList {
 	
-	ArrayList<Bookmark> BookmarkList = new ArrayList<>();
+	public static ArrayList<Bookmark> BookmarkList = new ArrayList<>();
 	ArrayList<Bookmark> Temp = new ArrayList<>();
 	static String[] splitline;
 	int cnt = -1;

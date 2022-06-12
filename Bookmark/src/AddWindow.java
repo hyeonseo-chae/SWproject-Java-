@@ -1,13 +1,22 @@
 import java.awt.*;
 import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddWindow extends JFrame{
 
+
+public class AddWindow extends JFrame{
+	BookmarkListPanel k = new BookmarkListPanel();
 	public AddWindow() {
+		
 		JButton button1;
 		Dimension dim = new Dimension(1000,100);
 		JFrame frame = new JFrame("Input New Bookmark");
@@ -15,32 +24,44 @@ public class AddWindow extends JFrame{
 		frame.setPreferredSize(dim);
 		
 		String header[]= {"Group","Name","URL","Memo"};
-		String[][] contents = new String[0][4];
+		String[][] contents = new String[1][4];
+		
+		
 		JTable table = new JTable(contents,header);
-
 		
 		JScrollPane scrollpane = new JScrollPane(table);
 		button1 = new JButton("INPUT");
 		JPanel rightpanel = new JPanel(new GridLayout(1,1,0,0));
-		
-		JPanel panel = new JPanel();
-		panel.setLayout(new BoxLayout(panel,BoxLayout.X_AXIS));
-		
-		JTextField group = new JTextField(3);
-		JTextField name = new JTextField(3);
-		JTextField url = new JTextField(3);
-		JTextField memo = new JTextField(3);
-		
-		panel.add(group);
-		panel.add(name);
-		panel.add(url);
-		panel.add(memo);
-		
+
 		rightpanel.add(button1);
 		frame.add("East",rightpanel);
 		frame.add("Center",scrollpane);
-		frame.add(panel,BorderLayout.SOUTH);
 		frame.pack();
 		frame.setVisible(true);
+		
+		
+		
+		
+		button1.addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent e) {
+			String group = (String) table.getValueAt(0,0);
+				String name = (String) table.getValueAt(0,1);
+				String url = (String) table.getValueAt(0,2);
+				String memo = (String) table.getValueAt(0,3);
+				
+				
+				LocalDateTime now = LocalDateTime.now();
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm");
+				String formatedNow = now.format(formatter);
+				o.BookmarkList.add(new Bookmark(group,name,url,formatedNow,memo));
+				
+				k.BookmarkListPanelre();
+				frame.dispose();
+			}
+			
+		});
+		
+		
+		
 	}
 }
